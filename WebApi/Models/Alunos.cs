@@ -14,12 +14,14 @@ namespace WebApi.Models
         public string nome { get; set; }
         public string sobrenome { get; set; }
         public string telefone { get; set; }
+
+        public string data { get; set; }
         public int ra{ get; set; }
 
         // O método abaixo retorna uma lista com cada aluno do meu arquivo base.json
         public List<Alunos> ListaAlunos()
         {
-            var caminhoArquivo = HostingEnvironment.MapPath(@"~/App_Data\base.json");           
+            var caminhoArquivo = HostingEnvironment.MapPath(@"~/App_Data\baseData.json");           
             var json = File.ReadAllText(caminhoArquivo);
             var listaAlunos = JsonConvert.DeserializeObject<List<Alunos>>(json);
 
